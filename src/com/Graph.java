@@ -46,4 +46,20 @@ public class Graph {
 
         }
     }
+
+    void DFS(int root) {
+        boolean visited[] = new boolean[vertices];
+
+        visited[root] = true;
+        System.out.print(root + " ");
+
+        Iterator<Integer> i = adj_list[root].listIterator();
+        while (i.hasNext()) {
+            int adjacent = i.next();
+            if(!visited[adjacent]) {
+                DFS(adjacent);
+            }
+        }
+
+    }
 }

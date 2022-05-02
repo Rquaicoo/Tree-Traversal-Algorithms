@@ -16,5 +16,9 @@ public class Main {
 
         graph.BFS(2);
 
+        System.out.println("Following is Depth First Traversal");
+
+        graph.DFS(2);
+
     }
 }
