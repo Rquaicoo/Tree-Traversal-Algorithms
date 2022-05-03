@@ -1,3 +1,5 @@
+package com;
+
 import java.util.*;
 
 public class Node implements Comparable<Node> {
@@ -144,7 +146,6 @@ public class Node implements Comparable<Node> {
         n1.addBranch(7, n4);
         n2.addBranch(4, n5);
         n3.addBranch(6, n4);
-
         n4.addBranch(3, destination);
         n5.addBranch(1, n4);
         n5.addBranch(3, destination);
