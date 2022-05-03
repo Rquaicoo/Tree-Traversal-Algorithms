@@ -8,32 +8,34 @@ public class Graph {
     private int vertices;
     private LinkedList<Integer> adj_list[];
 
-    Graph(int vertices) {
-        vertices = vertices;
+    Graph(int nodes) {
+        vertices = nodes;
 
         adj_list = new LinkedList[vertices];
 
-        for (int i=0; i < vertices; i++)
-            adj_list[i] = new LinkedList<>();
+        for (int i=0; i < nodes; i++)
+            adj_list[i] = new LinkedList();
+
     }
 
     //add edges
 
     void  addEdge(int start, int end) {
         adj_list[start].add(end);
+
     }
 
     void BFS(int root) {
         boolean visited[] = new boolean[vertices];
 
-        LinkedList<Integer> queue = new LinkedList<>();
+        LinkedList<Integer> queue = new LinkedList<Integer>();
 
         visited[root] = true;
         queue.add(root);
 
         while(queue.size() != 0) {
             root = queue.poll();
-            System.out.println(root + " ");
+            System.out.print(root + "->");
 
             Iterator<Integer> i = adj_list[root].listIterator();
             while (i.hasNext()) {
@@ -51,7 +53,7 @@ public class Graph {
         boolean visited[] = new boolean[vertices];
 
         visited[root] = true;
-        System.out.print(root + " ");
+        System.out.print(root + "->");
 
         Iterator<Integer> i = adj_list[root].listIterator();
         while (i.hasNext()) {
